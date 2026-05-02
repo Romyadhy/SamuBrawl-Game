@@ -1,6 +1,6 @@
 # About this repo
 
-This is my 2D game with ==raylib== and I make this using c++.
+This is my 2D game with **raylib** and I make this using c++.
 
 # Structure File
 
