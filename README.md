@@ -4,7 +4,16 @@ This is my 2D game with **raylib** and I make this using c++.
 
 # Structure File
 
---soon--
+```
+SamuBrawl/
+  ├── CMakeLists.txt/
+  ├── libs/
+  ├── src/
+```
+
+CMakeLists.txt: Cmake file that help to mapping files, libs, and so on.  
+libs folder: Libs that contain raylib library and the others header folder.  
+src: Main folder assets and contain main.cpp.
 
 # Installing and Setup
 
