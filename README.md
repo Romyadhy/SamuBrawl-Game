@@ -17,7 +17,37 @@ src: Main folder assets and contain main.cpp.
 
 # Installing and Setup
 
---soon--
+_About this repo game:_
+
+- First you need to make sure has intalling _raylib_, _CMake_, Compiler CPP, and also LSP for CPP.
+- Clone repo:
+
+```
+git clone https://github.com/Romyadhy/SamuBrawl-Game.git
+
+```
+
+- Next create build folder inside your folder game.
+
+```
+cd SamuBrawl-Game
+mkdir build
+
+```
+
+- Next init and build using cmake:
+
+```
+cmake -S . -B build "CMakeLists"
+
+```
+
+Run the game:
+
+```
+build\app.exe
+
+```
 
 # How to play
 
