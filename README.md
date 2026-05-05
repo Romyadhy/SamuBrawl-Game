@@ -37,6 +37,6 @@ B: Debug Hithox Draw
 
 # Assets Rights
 
---soon--
+This assets is made by _LuizMelo_ u can access it for free into this link: [LuizMelo](https://nastanliev.itch.io/samurai)
 
 #### Copyright (c) 2026 Romyadhy. All Rights Reserved.
