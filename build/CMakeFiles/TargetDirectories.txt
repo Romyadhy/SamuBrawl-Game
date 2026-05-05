@@ -1,3 +1,0 @@
-D:/Document/C++/GAME2D/SamuBrawl/build/CMakeFiles/app.dir
-D:/Document/C++/GAME2D/SamuBrawl/build/CMakeFiles/edit_cache.dir
-D:/Document/C++/GAME2D/SamuBrawl/build/CMakeFiles/rebuild_cache.dir
