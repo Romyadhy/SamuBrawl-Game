@@ -39,7 +39,7 @@ mkdir build
 cmake -S . -B build "CMakeLists"
 ```
 
-Run the game:
+- Run the game:
 
 ```
 build\app.exe
