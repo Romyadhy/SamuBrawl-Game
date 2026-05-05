@@ -24,7 +24,6 @@ _About this repo game:_
 
 ```
 git clone https://github.com/Romyadhy/SamuBrawl-Game.git
-
 ```
 
 - Next create build folder inside your folder game.
@@ -32,21 +31,18 @@ git clone https://github.com/Romyadhy/SamuBrawl-Game.git
 ```
 cd SamuBrawl-Game
 mkdir build
-
 ```
 
 - Next init and build using cmake:
 
 ```
 cmake -S . -B build "CMakeLists"
-
 ```
 
 Run the game:
 
 ```
 build\app.exe
-
 ```
 
 # How to play
