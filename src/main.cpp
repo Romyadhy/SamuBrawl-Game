@@ -14,6 +14,14 @@ int main(void) {
   const char *title = "SAMU-FIGHT";
   InitWindow(screenWidth, screenHeigh, title);
 
+  // TODO: Load Background Texture
+  Texture2D bg = LoadTexture("src/assets/background/Forest2.png");
+
+  // NOTE: Render Texture
+  // RenderTexture2D target = LoadRenderTexture(VIRTUAL_W, VIRTUAL_H);
+  // SetTextureFilter(target.texture, TEXTURE_FILTER_POINT);
+  // SetTextureFilter(bg, TEXTURE_FILTER_POINT);
+
   // TODO: Load texture plyaer 1
   PlayerTextures p1_tex = {
       .idle = LoadTexture("src/assets/player1/Idle.png"),
@@ -37,9 +45,6 @@ int main(void) {
       .takehit = LoadTexture("src/assets/player2/TakeHit.png"),
       .death = LoadTexture("src/assets/player2/Death.png"),
   };
-
-  // TODO: Load Background Texture
-  Texture2D bg = LoadTexture("src/assets/background/Forest2.png");
 
   Player player = {.pos = {50, GROUND_Y},
                    .speed = 200.f,
@@ -262,6 +267,7 @@ int main(void) {
     animation_update(&player2.anim);
 
     BeginDrawing();
+    // BeginTextureMode(target);
     ClearBackground(BLACK);
     // NOTE: Background
     float scaleX = (float)screenWidth / bg.width;
@@ -270,12 +276,16 @@ int main(void) {
 
     float newWidth = bg.width * scale;
     float newHeight = bg.height * scale;
-
+    //
     DrawTexturePro(bg, (Rectangle){0, 0, (float)bg.width, (float)bg.height},
                    (Rectangle){(screenWidth - newWidth) / 2,
                                (screenHeigh - newHeight) / 2, newWidth,
                                newHeight},
                    (Vector2){0, 0}, 0.0f, WHITE);
+    // DrawTexturePro(bg, (Rectangle){0, 0, (float)bg.width, (float)bg.height},
+    //                (Rectangle){0, 0, VIRTUAL_W, VIRTUAL_H}, (Vector2){0, 0},
+    //                0.0f, WHITE);
+
     if (IsKeyPressed(KEY_F))
       ToggleFullscreen();
 
@@ -298,6 +308,7 @@ int main(void) {
     if (game_state == GAME_COUNTDOWN) {
       // Blur effect while countdown
       DrawRectangle(0, 0, screenWidth, screenHeigh, {0, 0, 0, 200});
+      // DrawRectangle(0, 0, VIRTUAL_W, VIRTUAL_H, (Color){0, 0, 0, 200});
 
       if (!show_fight) {
         int number = (int)countdown + 1;
@@ -311,7 +322,13 @@ int main(void) {
 
         DrawText(num_text, (screenWidth / 2) - (text_width / 2),
                  (screenHeigh / 2) - 100, font_size, {255, 255, 255, alpha});
-
+        // DrawText(num_text, (VIRTUAL_W / 2) - (text_width / 2),
+        //          (VIRTUAL_H / 2) - 40, font_size,
+        //          (Color){255, 255, 255, alpha});
+        // DrawText(num_text, (VIRTUAL_W / 2) - (text_width / 2),
+        //          (VIRTUAL_H / 2) - 25, font_size, (Color){255, alpha, 0,
+        //          255});
+        //
       } else {
         const char *fight_text = "FIGHT!";
         int font_size = 120;
@@ -345,26 +362,40 @@ int main(void) {
       }
     }
     EndDrawing();
+    // EndTextureMode();
+
+    //   BeginDrawing();
+    //   ClearBackground(BLACK);
+    //
+    //   DrawTexturePro(target.texture, (Rectangle){0, 0, VIRTUAL_W,
+    //   -VIRTUAL_H},
+    //                  (Rectangle){0, 0, screenWidth, screenHeigh},
+    //                  (Vector2){0, 0}, 0.0f, WHITE);
+    //
+    //   if (IsKeyPressed(KEY_F))
+    //     ToggleFullscreen();
+    //   EndDrawing();
+    // }
+    //
+    UnloadTexture(p1_tex.idle);
+    UnloadTexture(p2_tex.idle);
+    UnloadTexture(p1_tex.run);
+    UnloadTexture(p2_tex.run);
+    UnloadTexture(p1_tex.jump);
+    UnloadTexture(p2_tex.jump);
+    UnloadTexture(p1_tex.fall);
+    UnloadTexture(p2_tex.fall);
+    UnloadTexture(p1_tex.attack1);
+    UnloadTexture(p2_tex.attack1);
+    UnloadTexture(p1_tex.attack2);
+    UnloadTexture(p2_tex.attack2);
+    UnloadTexture(p1_tex.takehit);
+    UnloadTexture(p2_tex.takehit);
+    UnloadTexture(p1_tex.death);
+    UnloadTexture(p2_tex.death);
+    UnloadTexture(bg);
+    CloseWindow();
+
+    return 0;
   }
-
-  UnloadTexture(p1_tex.idle);
-  UnloadTexture(p2_tex.idle);
-  UnloadTexture(p1_tex.run);
-  UnloadTexture(p2_tex.run);
-  UnloadTexture(p1_tex.jump);
-  UnloadTexture(p2_tex.jump);
-  UnloadTexture(p1_tex.fall);
-  UnloadTexture(p2_tex.fall);
-  UnloadTexture(p1_tex.attack1);
-  UnloadTexture(p2_tex.attack1);
-  UnloadTexture(p1_tex.attack2);
-  UnloadTexture(p2_tex.attack2);
-  UnloadTexture(p1_tex.takehit);
-  UnloadTexture(p2_tex.takehit);
-  UnloadTexture(p1_tex.death);
-  UnloadTexture(p2_tex.death);
-  UnloadTexture(bg);
-  CloseWindow();
-
-  return 0;
 }

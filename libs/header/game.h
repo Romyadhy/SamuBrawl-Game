@@ -1,10 +1,12 @@
 #include <player.h>
 
-#define GROUND_Y 450.0f
+#define GROUND_Y 740.0f
 #define GROUND_X 500.0f
 #define GRAVITY 800.0f
 #define JUMP_FORCE -300.0f
-
+// #define VIRTUAL_W 640
+// #define VIRTUAL_H 360
+//
 // NOTE: GAME STATE
 typedef enum { GAME_COUNTDOWN, GAME_PLAYING, GAME_OVER } GameState;
 
