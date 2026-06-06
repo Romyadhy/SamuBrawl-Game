@@ -1,4 +1,4 @@
-#include <game.h>
+#include <game.hpp>
 #include <raylib.h>
 
 // NOTE: Game state variabel
@@ -277,11 +277,11 @@ int main(void) {
     float newWidth = bg.width * scale;
     float newHeight = bg.height * scale;
     //
-    DrawTexturePro(bg, (Rectangle){0, 0, (float)bg.width, (float)bg.height},
-                   (Rectangle){(screenWidth - newWidth) / 2,
-                               (screenHeigh - newHeight) / 2, newWidth,
-                               newHeight},
-                   (Vector2){0, 0}, 0.0f, WHITE);
+    DrawTexturePro(bg, Rectangle{0, 0, (float)bg.width, (float)bg.height},
+                   Rectangle{(screenWidth - newWidth) / 2,
+                             (screenHeigh - newHeight) / 2, newWidth,
+                             newHeight},
+                   Vector2{0, 0}, 0.0f, WHITE);
     // DrawTexturePro(bg, (Rectangle){0, 0, (float)bg.width, (float)bg.height},
     //                (Rectangle){0, 0, VIRTUAL_W, VIRTUAL_H}, (Vector2){0, 0},
     //                0.0f, WHITE);
