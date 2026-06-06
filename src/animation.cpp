@@ -1,14 +1,5 @@
+#include "animation.hpp"
 #include <raylib.h>
-
-typedef struct Animation {
-  int first;
-  int last;
-  int cur;
-  float speed;
-  float duration_left;
-  bool finished;
-  bool finished_stop;
-} Animation;
 
 void animation_update(Animation *self) {
   if (self->finished)
@@ -34,6 +25,6 @@ void animation_update(Animation *self) {
 Rectangle animation_frame(Animation *self, int num_frames_per_row) {
   int x = (self->cur % num_frames_per_row) * 200.0;
   int y = (self->cur / num_frames_per_row) * 200.0;
-  return (Rectangle){
+  return Rectangle{
       .x = (float)x, .y = (float)y, .width = 200.0, .height = 200.0};
 }
