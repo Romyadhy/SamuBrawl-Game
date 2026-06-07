@@ -1,6 +1,6 @@
-#include <player.hpp>
+#include "player.hpp"
 
-#define GROUND_Y 740.0f
+#define GROUND_Y 500.0f
 #define GROUND_X 500.0f
 #define GRAVITY 800.0f
 #define JUMP_FORCE -300.0f

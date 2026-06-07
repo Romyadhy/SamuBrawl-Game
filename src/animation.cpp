@@ -1,5 +1,6 @@
-#include "animation.hpp"
 #include <raylib.h>
+
+#include "animation.hpp"
 
 void animation_update(Animation *self) {
   if (self->finished)

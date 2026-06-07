@@ -1,5 +1,6 @@
-#include <game.hpp>
 #include <raylib.h>
+
+#include "game.hpp"
 
 // NOTE: Game state variabel
 GameState game_state = GAME_COUNTDOWN;
@@ -11,7 +12,7 @@ int main(void) {
   // TODO: Init
   const int screenWidth = 1200;
   const int screenHeigh = 900;
-  const char *title = "SAMU-FIGHT";
+  const char *title = "SAMU-FIGHT-GAME";
   InitWindow(screenWidth, screenHeigh, title);
 
   // TODO: Load Background Texture
@@ -92,19 +93,31 @@ int main(void) {
 
   };
 
+  // NOTE: Check Texture
+  if (!player_textures_valid(&p1_tex)) {
+    TraceLog(LOG_ERROR, "Player 1 failed to Load");
+    CloseWindow();
+    return 1;
+  }
+  if (!player_textures_valid(&p2_tex)) {
+    TraceLog(LOG_ERROR, "Player 2 failed to Load");
+    CloseWindow();
+    return 1;
+  }
+
   while (!WindowShouldClose()) {
 
-    // NOTE: Check Texture
-    if (!player_textures_valid(&p1_tex)) {
-      TraceLog(LOG_ERROR, "Player 1 failed to Load");
-      CloseWindow();
-      return 1;
-    }
-    if (!player_textures_valid(&p2_tex)) {
-      TraceLog(LOG_ERROR, "Player 2 failed to Load");
-      CloseWindow();
-      return 1;
-    }
+    // // NOTE: Check Texture
+    // if (!player_textures_valid(&p1_tex)) {
+    //   TraceLog(LOG_ERROR, "Player 1 failed to Load");
+    //   CloseWindow();
+    //   return 1;
+    // }
+    // if (!player_textures_valid(&p2_tex)) {
+    //   TraceLog(LOG_ERROR, "Player 2 failed to Load");
+    //   CloseWindow();
+    //   return 1;
+    // }
 
     float dt = GetFrameTime();
 
@@ -377,25 +390,27 @@ int main(void) {
     //   EndDrawing();
     // }
     //
-    UnloadTexture(p1_tex.idle);
-    UnloadTexture(p2_tex.idle);
-    UnloadTexture(p1_tex.run);
-    UnloadTexture(p2_tex.run);
-    UnloadTexture(p1_tex.jump);
-    UnloadTexture(p2_tex.jump);
-    UnloadTexture(p1_tex.fall);
-    UnloadTexture(p2_tex.fall);
-    UnloadTexture(p1_tex.attack1);
-    UnloadTexture(p2_tex.attack1);
-    UnloadTexture(p1_tex.attack2);
-    UnloadTexture(p2_tex.attack2);
-    UnloadTexture(p1_tex.takehit);
-    UnloadTexture(p2_tex.takehit);
-    UnloadTexture(p1_tex.death);
-    UnloadTexture(p2_tex.death);
-    UnloadTexture(bg);
-    CloseWindow();
-
-    return 0;
   }
+
+  // NOTE: UNLOAD ALL TEXTURE
+  UnloadTexture(p1_tex.idle);
+  UnloadTexture(p2_tex.idle);
+  UnloadTexture(p1_tex.run);
+  UnloadTexture(p2_tex.run);
+  UnloadTexture(p1_tex.jump);
+  UnloadTexture(p2_tex.jump);
+  UnloadTexture(p1_tex.fall);
+  UnloadTexture(p2_tex.fall);
+  UnloadTexture(p1_tex.attack1);
+  UnloadTexture(p2_tex.attack1);
+  UnloadTexture(p1_tex.attack2);
+  UnloadTexture(p2_tex.attack2);
+  UnloadTexture(p1_tex.takehit);
+  UnloadTexture(p2_tex.takehit);
+  UnloadTexture(p1_tex.death);
+  UnloadTexture(p2_tex.death);
+  UnloadTexture(bg);
+  CloseWindow();
+
+  return 0;
 }
