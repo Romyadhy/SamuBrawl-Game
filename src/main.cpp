@@ -1,4 +1,4 @@
-#include <game.h>
+#include "game.h"
 #include <raylib.h>
 
 // NOTE: Game state variabel
@@ -9,8 +9,8 @@ float fight_timer = 0.0f;
 
 int main(void) {
   // TODO: Init
-  const int screenWidth = 1200;
-  const int screenHeigh = 900;
+  const int screenWidth = 1280;
+  const int screenHeigh = 720;
   const char *title = "SAMU-FIGHT";
   InitWindow(screenWidth, screenHeigh, title);
 
