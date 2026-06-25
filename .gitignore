@@ -2,3 +2,6 @@
 progress.md
 build/
 compile_commands.json
+cmake_install.cmake
+build.ninja
+CMakeLists.txt

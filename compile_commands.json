@@ -1,0 +1,14 @@
+[
+{
+  "directory": "D:/Document/C++/GAME2D/SamuBrawl",
+  "command": "D:\\APPS\\MINGGW\\mingw64\\bin\\c++.exe -ID:/Document/C++/GAME2D/SamuBrawl/libs/header -ID:/Document/C++/GAME2D/SamuBrawl/libs/raylib/include -std=gnu++20 -o CMakeFiles\\app.dir\\src\\main.cpp.obj -c D:\\Document\\C++\\GAME2D\\SamuBrawl\\src\\main.cpp",
+  "file": "D:\\Document\\C++\\GAME2D\\SamuBrawl\\src\\main.cpp",
+  "output": "CMakeFiles\\app.dir\\src\\main.cpp.obj"
+},
+{
+  "directory": "D:/Document/C++/GAME2D/SamuBrawl",
+  "command": "D:\\APPS\\MINGGW\\mingw64\\bin\\c++.exe -ID:/Document/C++/GAME2D/SamuBrawl/libs/header -ID:/Document/C++/GAME2D/SamuBrawl/libs/raylib/include -std=gnu++20 -o CMakeFiles\\app.dir\\src\\animation.cpp.obj -c D:\\Document\\C++\\GAME2D\\SamuBrawl\\src\\animation.cpp",
+  "file": "D:\\Document\\C++\\GAME2D\\SamuBrawl\\src\\animation.cpp",
+  "output": "CMakeFiles\\app.dir\\src\\animation.cpp.obj"
+}
+]

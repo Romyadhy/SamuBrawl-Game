@@ -1,5 +1,6 @@
-#include "animation.h"
 #include <raylib.h>
+
+#include "animation.hpp"
 
 // NOTE: Player State
 typedef enum {
@@ -51,7 +52,7 @@ void player_set_state(Player *p, PlayerState new_state) {
 
   switch (new_state) {
   case STATE_IDLE:
-    p->anim = (Animation){
+    p->anim = Animation{
         .first = 0,
         .last = 7,
         .cur = 0,
@@ -62,7 +63,7 @@ void player_set_state(Player *p, PlayerState new_state) {
     };
     break;
   case STATE_RUN:
-    p->anim = (Animation){
+    p->anim = Animation{
         .first = 0,
         .last = 7,
         .cur = 0,
@@ -73,7 +74,7 @@ void player_set_state(Player *p, PlayerState new_state) {
     };
     break;
   case STATE_JUMP:
-    p->anim = (Animation){
+    p->anim = Animation{
         .first = 0,
         .last = 1,
         .cur = 0,
@@ -84,7 +85,7 @@ void player_set_state(Player *p, PlayerState new_state) {
     };
     break;
   case STATE_FALL:
-    p->anim = (Animation){
+    p->anim = Animation{
         .first = 0,
         .last = 1,
         .cur = 0,
@@ -95,7 +96,7 @@ void player_set_state(Player *p, PlayerState new_state) {
     };
     break;
   case STATE_ATTACK1:
-    p->anim = (Animation){
+    p->anim = Animation{
         .first = 0,
         .last = 5,
         .cur = 0,
@@ -106,7 +107,7 @@ void player_set_state(Player *p, PlayerState new_state) {
     };
     break;
   case STATE_ATTACK2:
-    p->anim = (Animation){
+    p->anim = Animation{
         .first = 0,
         .last = 5,
         .cur = 0,
@@ -117,7 +118,7 @@ void player_set_state(Player *p, PlayerState new_state) {
     };
     break;
   case STATE_TAKEHIT:
-    p->anim = (Animation){
+    p->anim = Animation{
         .first = 0,
         .last = 3,
         .cur = 0,
@@ -129,7 +130,7 @@ void player_set_state(Player *p, PlayerState new_state) {
     break;
 
   case STATE_DEATH:
-    p->anim = (Animation){
+    p->anim = Animation{
         .first = 0,
         .last = 5,
         .cur = 0,
@@ -182,26 +183,26 @@ bool player_textures_valid(PlayerTextures *tex) {
 // TODO: Hitbox Update
 void player_update_rects(Player *p) {
   if (p->facing_right) {
-    p->body_rect = (Rectangle){
+    p->body_rect = Rectangle{
         .x = p->pos.x + 190,
         .y = p->pos.y + 100,
         .width = 100,
         .height = 250,
     };
-    p->attack_rect = (Rectangle){
+    p->attack_rect = Rectangle{
         .x = p->pos.x + 290,
         .y = p->pos.y + 130,
         .width = 150,
         .height = 130,
     };
   } else {
-    p->body_rect = (Rectangle){
+    p->body_rect = Rectangle{
         .x = p->pos.x + 210,
         .y = p->pos.y + 100,
         .width = 100,
         .height = 250,
     };
-    p->attack_rect = (Rectangle){
+    p->attack_rect = Rectangle{
         .x = p->pos.x + 60,
         .y = p->pos.y + 130,
         .width = 150,
