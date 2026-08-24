@@ -5,3 +5,6 @@ compile_commands.json
 cmake_install.cmake
 build.ninja
 CMakeLists.txt
+CMakeCache.txt
+__cmake_systeminformation
+

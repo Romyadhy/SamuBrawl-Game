@@ -16,7 +16,7 @@ int main(void) {
   InitWindow(screenWidth, screenHeigh, title);
 
   // TODO: Load Background Texture
-  Texture2D bg = LoadTexture("src/assets/background/Forest2.png");
+  Texture2D bg = LoadTexture("assets/background/Forest2.png");
 
   // NOTE: Render Texture
   // RenderTexture2D target = LoadRenderTexture(VIRTUAL_W, VIRTUAL_H);
@@ -25,26 +25,26 @@ int main(void) {
 
   // TODO: Load texture plyaer 1
   PlayerTextures p1_tex = {
-      .idle = LoadTexture("src/assets/player1/Idle.png"),
-      .run = LoadTexture("src/assets/player1/Run.png"),
-      .jump = LoadTexture("src/assets/player1/Jump.png"),
-      .fall = LoadTexture("src/assets/player1/Fall.png"),
-      .attack1 = LoadTexture("src/assets/player1/Attack1.png"),
-      .attack2 = LoadTexture("src/assets/player1/Attack2.png"),
-      .takehit = LoadTexture("src/assets/player1/TakeHit.png"),
-      .death = LoadTexture("src/assets/player1/Death.png"),
+      .idle = LoadTexture("assets/player1/Idle.png"),
+      .run = LoadTexture("assets/player1/Run.png"),
+      .jump = LoadTexture("assets/player1/Jump.png"),
+      .fall = LoadTexture("assets/player1/Fall.png"),
+      .attack1 = LoadTexture("assets/player1/Attack1.png"),
+      .attack2 = LoadTexture("assets/player1/Attack2.png"),
+      .takehit = LoadTexture("assets/player1/TakeHit.png"),
+      .death = LoadTexture("assets/player1/Death.png"),
   };
 
   // TODO: Load texture player
   PlayerTextures p2_tex = {
-      .idle = LoadTexture("src/assets/player2/Idle.png"),
-      .run = LoadTexture("src/assets/player2/Run.png"),
-      .jump = LoadTexture("src/assets/player2/Jump.png"),
-      .fall = LoadTexture("src/assets/player2/Fall.png"),
-      .attack1 = LoadTexture("src/assets/player2/Attack1.png"),
-      .attack2 = LoadTexture("src/assets/player2/Attack2.png"),
-      .takehit = LoadTexture("src/assets/player2/TakeHit.png"),
-      .death = LoadTexture("src/assets/player2/Death.png"),
+      .idle = LoadTexture("assets/player2/Idle.png"),
+      .run = LoadTexture("assets/player2/Run.png"),
+      .jump = LoadTexture("assets/player2/Jump.png"),
+      .fall = LoadTexture("assets/player2/Fall.png"),
+      .attack1 = LoadTexture("assets/player2/Attack1.png"),
+      .attack2 = LoadTexture("assets/player2/Attack2.png"),
+      .takehit = LoadTexture("assets/player2/TakeHit.png"),
+      .death = LoadTexture("assets/player2/Death.png"),
   };
 
   Player player = {.pos = {50, GROUND_Y},
