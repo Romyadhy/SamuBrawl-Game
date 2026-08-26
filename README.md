@@ -2,6 +2,10 @@
 
 This is my 2D game with **raylib** and I make this using c++.
 
+# Release Game
+
+You can download this game on this link:https://ryoumy.itch.io/samubrawl
+
 # Structure File
 
 ```
