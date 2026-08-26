@@ -7,4 +7,5 @@ build.ninja
 CMakeLists.txt
 CMakeCache.txt
 __cmake_systeminformation
+*.zip
 
